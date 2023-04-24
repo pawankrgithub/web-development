@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{
+            
+            border: 1.75px solid black;
+            border-collapse:collapse;
+            min-width: 75px;
+        }
+
+        table.centre{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 250px;
+       }
+       td{
+        text-align: center;
+       }
+       .orange{
+        background-color: orange;
+       }
+       .green{
+        background-color:rgba(43, 213, 43, 0.807);
+       }
+       .blue{
+        background-color:rgb(60, 150, 186);
+       }
+       .yellow{
+        background-color:yellow;
+       }
+       .grey{
+        color: aliceblue;
+        background-color: grey;
+       }
+
+    </style>
+
+</head>
+<body>
+    <table class ="centre">
+        <tr>
+            <td class="orange">10</td>
+            <td class="blue">20</td>
+            <td class="blue">30</td>
+            <td class="green">4</td>
+        </tr>
+        <tr>
+            <td class="orange">50</td>
+            <td colspan="2" class="grey">Coloured       Table</td>
+            <td class="green">6</td>
+        </tr>
+        <tr>
+            <td class="orange">70</td>
+            <td rowspan="2" class="yellow">80</td>
+            <td rowspan="2" class="yellow">90</td>
+            <td class="green">10</td>
+        </tr>
+        <tr>
+            <td class="orange">110</td>
+            <td class="green">12</td>
+            
+        </tr>
+        <tr>
+            <td class="orange">130</td>
+            <td class="blue">140</td>
+            <td class="blue">150</td>
+            <td class="green">16</td>
+        </tr>
+    </table>
+</body>
+</html>
