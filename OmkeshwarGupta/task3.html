@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table,td,tr{
+            border: 2px solid black;
+            text-align: center;
+            border-collapse: collapse;
+            min-width: 75px;
+            font-weight: bold;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 250px;
+           
+        }
+        .o{
+            background-color: orange;
+        }
+        .b{
+            background-color: rgb(1, 183, 255);
+        }
+        .g{
+            background-color: rgb(8, 196, 8);
+        }
+        .y{
+            background-color: yellow;
+        }
+        .txt{
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <table>
+       <tr>
+        <td class="o">10</td>
+        <td class="b">20</td>
+        <td class="b">30</td>
+        <td class="g">4</td>
+
+       </tr>
+
+       <tr>
+        <td class="o">50</td>
+        <td colspan="2" class="txt">Colored Table</td>
+        <td class="g">6</td>
+
+       </tr>
+       <tr>
+        <td class="o">70</td>
+        <td rowspan="2" class="y">80</td>
+        <td rowspan="2" class="y">90</td>
+        <td class="g">10</td>
+
+       </tr>
+       <tr>
+        <td class="o">110</td>
+        <td class="g">12</td>
+        
+
+       </tr>
+       <tr>
+        <td class="o">130</td>
+        <td class="b">140</td>
+        <td class="b">150</td>
+        <td class="g">16</td>
+
+       </tr>
+       
+      
+       
+    </table>
+</body>
+</html>
