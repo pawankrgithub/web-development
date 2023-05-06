@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <style>
+        html {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Fill Form</h2>
+    <form action="output.html">
+        <label for="a">Your name :</label>
+        <input id="a" type="text" name="name" placeholder="Name">
+        <br><br>
+        <labal for="d">Date :</labal>
+        <input id="d" type="date" name="date">
+        <br>
+        <h5>Choose Gender</h5>
+        <input id="male" name="choice"type="radio" value="male">
+        <label for="male">Male</label>
+        <input id="female" name="choice" type="radio" value="female">
+        <label for="female">Female</label>
+        <input id="Others" name="choice" type="radio" value="others">
+        <label for="Others">Others</label>
+        <br>
+        <h5>Choose one</h5>
+        <input id="1" type="checkbox" name="name" value="AI" unchecked>
+        <label for="1">AI</label>
+        <input id="2" type="checkbox" name="name" value="ML" unchecked>
+        <label for="2">ML</label>
+        <input id="3" type="checkbox" name="name" value="Cloud" unchecked>
+        <label for="3">Cloud</label>
+        <input id="4" type="checkbox" name="name" value="Web" unchecked>
+        <label for="4">Web</label>
+        <input id="5" type="checkbox" name="name" value="Mobile" unchecked>
+        <label for="5">Mobile</label>
+        <input id="6" type="checkbox" name="name" value="DevOps" unchecked>
+        <label for="6">DevOps</label>
+        <input id="7" type="checkbox" name="name" value="System" unchecked>
+        <label for="7">System</label>
+        <br><br>
+        <label for="a">Email :</label>
+        <input id="a" type="email" name="email" placeholder="example@mail.com">
+        <br><br>
+        <label for="b">Phone No. :</label>
+        <input id="b" type="number" name="number" placeholder="Name">
+        <br><br>
+        <label for="lang">Security Question</label>
+
+        <select name="lang" id="lang">
+            <option value="Default">Choice a Option</option>
+            <option value="1">What is your favourite book?</option>
+            <option value="2">What is your nickname?</option>
+            <option value="3">What is your birth town?</option>
+            <option value="4">Other</option>
+        </select>
+        <br>
+        <span>Answer :</span>
+        <textarea name="details" id="details" cols="30" rows="1"></textarea>
+        <br><br>
+        <label for="file">Upload Resume here</label>
+        <input type="file" name="upload_file" id="file" accept="image/jpeg,image/png,application/pdf" >
+        <br><br>
+        <input type="reset">
+        <input type="submit">
+    </form>
+</body>
+</html>
