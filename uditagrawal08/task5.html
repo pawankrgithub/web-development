@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .start{
+            padding: 50px;
+            text-align: center;
+            background-color: aliceblue;
+            font-size: large;
+            color: chocolate;
+        }
+        .form{
+            padding: 50px;
+            padding-left: 100px;
+            font-style: italic;
+            background-color: rgb(240, 255, 249);
+            font-size: large;
+        }
+        #name{
+            width: 75%;
+            height: 25px;
+            
+        }
+        #DoB{
+            width: 75%;
+            height: 25px;
+            
+        }
+        #Email{
+            width: 75%;
+            height: 25px;
+        }
+        #number{
+            width: 75%;
+            height: 25px;
+        }
+        #S_ques{
+            width: 71%;
+            height: 25px;
+        }
+        #text-box{
+            width: 75%;
+            height: 25px;
+        }
+        #submit{
+            float: right;
+            height: 50%;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="start"><h1>REGISTRATION FORM</h1>
+    </div>
+        <div class="form">
+        <form>
+        <lable for="name">NAME</lable>
+        <input type="text" id="name" name="name"><br>
+        <br>
+        <lable for="DOB">Date-Of-Birth</lable>
+        <input type="date" id="DOB" name="DOB"><br>
+        <br>
+        <lable for="Gender">Gender</lable><br>
+        <input type="radio" id="male" name="Gender" value="male">
+        <lable for="male">Male</lable><br>
+        <input type="radio" id="female" name="Gender" value="female">
+        <lable for="female">Female</lable><br>
+        <input type="radio" id="other" name="Gender" value="other">
+        <lable for="other">Other</lable><br>
+        <br>
+        <lable for="techstack">TechStack</lable><br>
+
+        <input type="checkbox" id="AI" name="techstack" value="ai">
+        <lable for="AI">AI</lable><br>
+        <input type="checkbox" id="ML" name="techstack" value="ml">
+        <lable for="ML">ML</lable><br>
+        <input type="checkbox" id="Cloud" name="techstack" value="cloud">
+        <lable for="Cloud">Cloud</lable><br>
+        <input type="checkbox" id="web" name="techstack" value="web">
+        <lable for="Web">Web</lable><br>
+        <input type="checkbox" id="Mobile" name="techstack" value="mobile">
+        <lable for="Mobile">Mobile</lable><br>
+        <input type="checkbox" id="Devops" name="techstack" value="devops">
+        <lable for="Devops">Devops</lable><br>
+        <input type="checkbox" id="System" name="techstack" value="system">
+        <lable for="System">System</lable><br>
+        <br>
+        <label for="E-mail">E-mail</label>
+        <input type="email" id="Email" name="email"><br>
+        <br>
+        <label for="number">Mobile</label>
+        <input type="number" id="number" name="mobile">
+        <br>
+        <br><label for="S_ques">Security Question</label>
+            <select id="S_ques" name="Security">
+            <option value="book">Favourite book</option>
+            <option value="nick_n">Nick Name</option>
+            <option value="b_town">Birth Town</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        
+        <br><label for="text-box">Answer</label>
+        <input type="text" id="text-box" name="text">
+        <br>
+        <br>
+
+
+        <lable for="resume">Resume</lable>
+        <input type="file" id="resume" name="resume">
+        <br>
+        <br><button type="reset" value="reset" >Reset</button>
+        <button type="submit" value="submit" id="submit">Submit</button>
+    </div> 
+
+    </form>
+</body>
+</html>
