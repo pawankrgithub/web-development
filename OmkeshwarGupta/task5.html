@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+      body{background-color: rgb(230, 189, 86);
+            text-align:center;
+            font-family: 'Times New Roman', Times, serif;
+      }
+      form{ font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: oblique;
+            
+            
+      }
+      .h{
+        color:  rgb(39, 67, 223);
+         margin-bottom: 30px;
+        
+      }
+    </style>
+</head>
+<body>
+  <h1 class="h"><u>REGISTRATION FORM</u></h1>
+    <form action="backend.php">
+       <div>
+        Name: <input type="text">
+       </div>
+       <br>
+       <div>
+        DOB: <input type="date">
+       </div>
+       <br>
+       <div>
+        Gender: <input type="radio" name="Gender" id=""> Male <input type="radio" name="Gender" id=""> Female <input type="radio" name="Gender" id=""> Others
+       </div>
+     <br>
+          <div>
+            Tech Stacks: <input type="checkbox" name="" id=""> AI
+             <input type="checkbox" name="" id=""> ML 
+             <input type="checkbox" name="" id=""> Cloud 
+             <input type="checkbox" name="" id=""> Web
+             <input type="checkbox" name="" id=""> Mobile 
+             <input type="checkbox" name="" id=""> DevOps 
+             <input type="checkbox" name="" id=""> System
+          </div>    
+          <br>
+          <div>
+            Email: <input type="email" name="" id="" placeholder="example@mail.com">
+
+          </div>
+          <br>
+          <div>
+            Mobile No.: <input type="tel" name="" id="" placeholder="+91 1234567890">
+          </div>
+          <br>
+          <div>
+            Select a security question: <select name="" id="">
+                <option value="default">select</option>
+                <option value=""> What is your favourite book? </option>
+                <option value="">What is your nickname?</option>
+                <option value="">what is your birth town?</option>
+                <option value=""> Others</option>
+            </select>
+          </div> <br>
+          <div>
+          Answer: <input type="text" placeholder="Type your answer here">
+          </div> <br>
+          <div>
+            Upload Your Resume: <input type="file" name="" id="">
+          </div>
+          <br>
+          <div> <button type="submit"> Submit</button> <button type="reset">Reset</button></div>
+        
+    </form>
+</body>
+</html>
