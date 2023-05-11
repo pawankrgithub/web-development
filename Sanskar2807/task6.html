@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="increaseCounter()">Click Me</button>
+        <span id="counter"></span>
+    </body>
+    <script>
+        let i = 0;
+        const counter = document.getElementById("counter");
+        counter.innerHTML = i;
+
+        function increaseCounter() {
+            i++;
+            counter.innerHTML = i;
+        }
+    </script>
+</html>
