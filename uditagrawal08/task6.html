@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <style>
+        .centre{
+            text-align: center;
+            background-color: antiquewhite;
+        }
+        #count{
+            color:red;
+        }
+        #sentence{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="centre">
+            <h3>Counter :</h3>
+    <p id="count">0</p>
+    <p id ="sentence"> </p>
+    <button onclick="counterFunction()">click</button>
+</div>
+
+    <script>
+        count=0;
+
+        function counterFunction()
+        {
+            count++;
+            document.getElementById("count").innerHTML=count;
+            if(count==1)
+            {
+                document.getElementById("sentence").innerHTML="You're taking the first step towards your goal, keep it up!";
+            }
+            if(count==2)
+            {
+                document.getElementById("sentence").innerHTML="Two steps forward, one step back. Keep pushing and you'll get there!";
+            }
+            if(count==3)
+            {
+                document.getElementById("sentence").innerHTML="Three cheers for you, keep up the great work!";
+            }
+            if(count==4)
+            {
+                document.getElementById("sentence").innerHTML="Four is a lucky number, and it seems to be working for you!";
+            }
+            if(count==5)
+            {
+                document.getElementById("sentence").innerHTML="High five for your hard work and determination!";
+            }
+            if(count==6)
+            {
+                document.getElementById("sentence").innerHTML="Six is a symbol of balance and harmony, keep striving for that balance in your life.";
+            }
+            if(count==7)
+            {
+                document.getElementById("sentence").innerHTML="Seven days in a week, make each one count towards your goals!";
+            }
+            if(count==8)
+            {
+                document.getElementById("sentence").innerHTML="You're doing an 8 out of 10 job, keep it up and strive for greatness!";
+            }
+            if(count==9)
+            {
+                document.getElementById("sentence").innerHTML="You're almost there, keep giving it your all!";
+            }
+            if(count==10)
+            {
+                document.getElementById("sentence").innerHTML="Perfect 10! You're doing an amazing job, keep it up!";
+
+            }
+            if(count>10)
+            {
+                document.getElementById("sentence").innerHTML=count+"continue...."
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>
