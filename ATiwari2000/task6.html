@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Task 6</title>
+    <style>
+       
+        div{
+            text-align: center;
+            border: 3px solid black;
+            padding: 10px;
+            max-width: 50%;
+        }
+
+        p{
+            font-weight: 500;
+            font-size:larger;
+        }
+
+
+    </style>
+  </head>
+
+  <body>
+    <div>
+    <h1>Button Counter
+    </h1>
+    <p id="cou">Button Count: 
+      <span id="counter">0
+      </span>
+    </p>
+    <button id="click" onclick="incrementCounter()"> Click me !!
+    </button>
+</div>
+    <script>
+      var counter=0;
+      var counterElement=document.getElementById("counter");
+      function incrementCounter(){
+        counter++;
+        counterElement.innerText=counter;
+      }
+    </script>
+  </body>
+</html>
