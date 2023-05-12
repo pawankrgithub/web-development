@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>task5</title>
+  <style>
+    input[type=submit]:focus {
+ color: red;
+ outline: 2px solid orange;  
+}
+ input.visited {
+  color: red;
+ outline: 2px solid orange;  
+} 
+  </style>
+</head>
+<body>
+  <h1>Registration Form</h1>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br><br>
+
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label><br><br>
+
+    <label for="techStacks">Tech Stacks:</label><br>
+    <input type="checkbox" id="ai" name="techStacks" value="AI">
+    <label for="ai">AI</label><br>
+    <input type="checkbox" id="ml" name="techStacks" value="ML">
+    <label for="ml">ML</label><br>
+    <input type="checkbox" id="cloud" name="techStacks" value="Cloud">
+    <label for="cloud">Cloud</label><br>
+    <input type="checkbox" id="web" name="techStacks" value="Web">
+    <label for="web">Web</label><br>
+    <input type="checkbox" id="mobile" name="techStacks" value="Mobile">
+    <label for="mobile">Mobile</label><br>
+    <input type="checkbox" id="devops" name="techStacks" value="DevOps">
+    <label for="devops">DevOps</label><br>
+    <input type="checkbox" id="system" name="techStacks" value="System">
+    <label for="system">System</label><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="phone">Phone No:</label>
+    <input type="tel" id="phone" name="phone" required><br><br>
+
+    <label for="securityQuestion">Security Question:</label>
+    <select id="securityQuestion" name="securityQuestion" required>
+      <option value="">Select a security question</option>
+      <option value="book">What is your favourite book?</option>
+      <option value="nickname">What is your nickname?</option>
+      <option value="birthTown">What is your birth town?</option>
+      <option value="other">Other</option>
+    </select><br><br>
+
+    <label for="securityAnswer">Answer:</label>
+    <input type="text" id="securityAnswer" name="securityAnswer" required><br><br>
+
+    <label for="resume">Resume:</label>
+    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx"><br><br>
+
+    <input type="submit" onclick="clicked();" value="Submit">
+    <input type="reset" value="Reset">
+  </form>
+</body
