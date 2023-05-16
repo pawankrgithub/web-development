@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 2px solid black;
+            border-collapse: collapse;
+            font-family: 'Roboto', sans-serif;
+            min-width: 75px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 250px;
+        }
+
+        td,
+        th {
+            border: 2px solid black;
+            min-width: 75px;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .blue {
+            background-color: rgb(76, 76, 244);
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .grey {
+            background-color: gray;
+            color: white;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="orange">10</td>
+            <td class="blue">20</td>
+            <td class="blue">30</td>
+            <td class="green">4</td>
+        </tr>
+        <tr>
+            <td class="orange">50</td>
+            <td colspan="2" class="grey">Colored Table</td>
+            <td class="green">6</td>
+        </tr>
+        <tr>
+            <td class="orange">70</td>
+            <td rowspan="2" class="yellow">80</td>
+            <td rowspan="2" class="yellow">90</td>
+            <td class="green">10</td>
+        </tr>
+        <tr>
+            <td class="orange">110</td>
+            <td class="green">12</td>
+        </tr>
+        <tr>
+            <td class="orange">130</td>
+            <td class="blue">140</td>
+            <td class="blue">150</td>
+            <td class="green">16</td>
+        </tr>
+    </table>
+</body>
+
+</html>
