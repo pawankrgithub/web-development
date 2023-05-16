@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>task3</title>
+        <style>
+            table,td,tr{
+                border: 1px solid black;
+                min-width: 75px;
+                border-collapse: collapse;
+                text-align: center;
+                margin: auto;
+            }
+
+            td:nth-child(1){
+                background-color: orange;
+            }
+
+            td:nth-last-child(1){
+                background-color: rgb(14, 209, 14);
+            }
+
+            .blue{
+                background-color: skyblue;
+            }
+
+            .grey{
+                color: white;
+                background-color: gray;
+            }
+
+            .yellow{
+                background-color: yellow;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>10</td>
+                <td class="blue">20</td>
+                <td class="blue">30</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td colspan="2" class="grey">Colored Table</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td rowspan="2" class="yellow">80</td>
+                <td rowspan="2" class="yellow">90</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>110</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>130</td>
+                <td class="blue">140</td>
+                <td class="blue">150</td>
+                <td>16</td>
+            </tr>
+        </table>
+    </body>
+</html>
