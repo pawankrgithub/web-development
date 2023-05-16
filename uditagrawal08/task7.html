@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   
+   .navbar
+    {
+  overflow: hidden;
+  background-color:palegoldenrod;
+  border-radius: 20px;
+  }
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+
+}
+.dropbtn{
+  font-size: large;
+  border: none;
+  padding: 16px;
+  margin: 0;
+  border-radius: 10px;
+}
+ .dropbtn:hover{
+  background-color: aqua;
+}
+.dropdown-content,.dropdown-contentc{
+  display: none;
+  background-color: cornflowerblue;
+  font-size: large;
+  position: absolute;
+  box-shadow: 6px 0px 6px rgb(150, 136, 118);
+
+}
+.dropdown-content a,.dropdown-contentc a{
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 15px;
+
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+  border-radius: 15px;
+}
+.dropdown-content a:hover,.dropdown-contentc a:hover{
+  background-color: aliceblue;
+}
+.dropdown:active .dropdown-contentc{
+  display: block;
+  border-radius: 15px;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="dropdown">
+        <button class="dropbtn">Hover</button>
+        <div class="dropdown-content">
+            <a href="https://github.com/uditagrawal08">profile</a>
+            <a href="https://github.com/CC-BHU">Coding club</a>
+            <a href="https://github.com/uditagrawal08/web-development">Repositry</a>
+        </div>
+        </div>
+        <div class="dropdown">
+        <button id="dropdownButton" class="dropbtn" onclick="toggleDropdown()">Click</button>
+        <div id="dropdownContent" class="dropdown-contentc" >
+            <a href="https://github.com/uditagrawal08">profile</a>
+        
+            <a href="https://github.com/CC-BHU">Coding club</a>
+            <a href="https://github.com/uditagrawal08/web-development">Repositry</a>
+            </div>
+          </div>
+          
+    </nav>
+    <script>
+      
+      function toggleDropdown() {
+  if (dropdownContent.style.display == "block") {
+    dropdownContent.style.display = "none";
+  } else {
+    dropdownContent.style.display = "block";
+  }
+  event.stopPropagation();
+}
+document.onclick = function() {
+  dropdownContent.style.display = "none";
+};
+
+        
+      </script>
+
+</body>
+</html>
