@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CounterIncrease</title>
+    <style>
+        body{
+            background-color: rgb(158, 114, 113);
+        }
+        button{
+            background-color: rgb(81, 190, 81);
+        }
+    </style>
+</head>
+<body>
+    <head>Counter function</head>
+    <p>Counter:<span> <button id="click">CLICK ME</button></span> <span id="counter">0</span></p>
+
+    <script>
+        var zero = document.getElementById('counter');
+        var clickMe = document.getElementById('click');
+        var badho=0;
+        
+        function logic(){
+            ++badho;
+            zero.textContent=badho;
+
+        }
+        clickMe.addEventListener('click',logic);
+
+    </script>
+</body>
+</html>
