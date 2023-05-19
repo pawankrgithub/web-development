@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <style>
+
+    table, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        min-width: 75px;
+        padding: 5px;
+        text-align: center;
+      }
+
+      .center{
+        margin: 200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      td:nth-child(1) /* 1st Column */
+    {
+        background-color: rgba(250, 159, 41, 0.933);
+    }
+
+    td:nth-child(4)/* 4th Column */
+    {
+        background-color: rgba(19, 202, 50, 0.933);
+    }
+
+    tr:nth-child(1) ,tr:nth-child(5)/* 1st & 5th Row */
+    {
+        background-color: #30cece;
+    }
+
+    tr:nth-child(3) ,tr:nth-child(4) /* 3rd & 4th Row */
+    {
+        background-color: #e9f725;
+    }
+
+    #green{
+        background-color: rgba(19, 202, 50, 0.933);
+    }
+
+    #textbox{
+        background-color: rgba(118, 128, 120, 0.933);
+        color: rgb(236, 241, 245);
+    }
+      </style>
+</head>
+<body>
+    <table class="center">
+        <tr>
+          <td>10</td>
+          <td>20</td>
+          <td>30</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>50</td>
+          <td colspan="2" id="textbox">Colored Table</td>
+          <td id="green">6</td>
+        </tr>
+        <tr>
+            <td>70</td>
+            <td rowspan="2">80</td>
+            <td rowspan="2">90</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>110</td>
+            <td id="green">12</td>
+          </tr>
+        <tr>
+            <td>130</td>
+            <td>140</td>
+            <td>150</td>
+            <td>16</td>
+          </tr>
+      </table> 
+</body>
+</html>
