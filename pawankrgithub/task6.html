@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <style>
+        .z{
+
+            background-color: rgb(234, 255, 0);
+            border:rgb(115, 168, 186);
+
+        }
+    </style>
+</head>
+<body>
+    <button class="z" onclick="increaseCounter()" >Click me
+    </button>
+    <span id="count"></span>
+    
+</body>
+<script>
+    let p=0;
+    const counter=document.getElementById("count");
+    counter.innerHTML = p;
+    function increaseCounter() {
+            p++;
+            counter.innerHTML = p;
+        }
+</script>
+</html>
