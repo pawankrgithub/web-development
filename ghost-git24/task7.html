@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 7
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: bisque;
+            border-radius: 10px;
+            display: flex;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar li {
+            margin-right: 10px;
+            padding: 25px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown:hover {
+            background-color: rgb(25, 201, 250);
+        }
+
+        .dropdownclick:hover {
+            background-color: rgb(25, 201, 250);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 68px;
+            box-shadow: 2px solid lightpink;
+            background-color: lightblue;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 5px 5px gray;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: beige;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: pink;
+        }
+
+        .dropdownclick {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdownclick.active .dropdownc-content {
+            display: block;
+            background-color: beige;
+        }
+
+        .dropdownc-content {
+            display: none;
+            position: absolute;
+            top: 68px;
+            background-color: lightblue;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 5px 5px gray;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .dropdownc-content a {
+            display: block;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .dropdownc-content a:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li class="dropdown">
+                <a href="#">Hover</a>
+                <div class="dropdown-content">
+                    <a href="https://github.com/ghost-git24">Profile</a>
+                    <a href="https://github.com/CC-BHU">Coding Club</a>
+                    <a href="https://github.com/ghost-git24/web-development">Repository</a>
+                </div>
+            </li>
+            <li class="dropdownclick" id="dropdownnn">
+                <a href="#">Click</a>
+                <div id="dp" class="dropdownc-content">
+                    <a href="https://github.com/ghost-git24">Profile</a>
+                    <a href="https://github.com/CC-BHU">Coding Club</a>
+                    <a href="https://github.com/ghost-git24/web-development">Repository</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        const d = document.getElementById("dropdownnn");
+        d.addEventListener('click', function () {
+            const dp = document.getElementById("dp");
+            if (dp.classList.contains("show")) {
+                dp.classList.remove("show");
+            }
+            else {
+                dp.classList.add("show");
+            }
+        })
+    </script>
+
+</body>
+
+</html>

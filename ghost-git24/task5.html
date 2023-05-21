@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+    <style>
+        *{
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0;
+        }
+        form {
+            padding: 50px;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center">Form</h1>
+    <form>
+        Name :
+        <input type="text">
+        <br />
+        <br />
+        <br />
+
+        DOB :
+        <input type="date">
+        <br />
+        <br />
+        <br />
+
+        Gender :
+        <input type="radio" id="male" name="gen">
+        <label id="male">Male</label>
+        <input type="radio" id="female" name="gen">
+        <label id="female">Female</label>
+        <input type="radio" id="other" name="gen">
+        <label id="other">Other</label>
+        <br />
+        <br />
+        <br />
+
+        Tech Stack :
+        <input type="checkbox">
+        <label>AI</label>
+        <input type="checkbox">
+        <label>ML</label>
+        <input type="checkbox">
+        <label>Cloud</label>
+        <input type="checkbox">
+        <label>Web</label>
+        <input type="checkbox">
+        <label>App</label>
+        <input type="checkbox">
+        <label>DevOps</label>
+        <input type="checkbox">
+        <label>System</label>
+        <br />
+        <br />
+        <br />
+
+        Email :
+        <input type="email">
+        <br />
+        <br />
+        <br />
+
+        Phone Number :
+        <input type="number">
+        <br />
+        <br />
+        <br />
+
+        <label for="security">Select a Security Question :</label>
+
+        <select name="security" id="security">
+            <!-- <option value="default">Select your Question</option> -->
+            <option value="favbook">What is your favourite book?</option>
+            <option value="nickname">What is your nickname?</option>
+            <option value="birthtown">What is your birth town?</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        <input type="password" placeholder="Your Answer">
+        <br />
+        <br />
+        <br />
+
+        <input type="file" id="myFile" name="filename">
+        <!-- <br/>x -->
+        <input type="submit">
+        <br />
+        <br />
+        <br />
+
+        <input type="submit">
+        <input type="reset">
+    </form>
+</body>
+
+</html>

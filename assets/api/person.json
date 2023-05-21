@@ -1,0 +1,15 @@
+{
+    "name": "Nick Lee",
+    "age": 24,
+    "gender": "male",
+    "email": "nicklee@mail.com",
+    "location": "San Francisco",
+    "occupation": "Software Engineer",
+    "hobbies": [
+        "basketball",
+        "hiking",
+        "guitar"
+    ],
+    "bio": "I'm a software engineer at Facebook. I love to play basketball and hike in my free time.",
+    "avatar": "https://github.com/CC-BHU/web-development/raw/main/assets/images/task9.jpg"
+}
