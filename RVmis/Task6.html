@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align : center;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id = "btn" value="Click Me"> <br><br>
+    Button Clicked <span id="Data">0</span> Times.
+    <script>
+        document.getElementById("btn").onclick = function(){
+        document.getElementById("Data").innerHTML = parseInt(document.getElementById("Data").innerHTML) + 1;
+    }
+    </script>
+</body>
+
+</html>

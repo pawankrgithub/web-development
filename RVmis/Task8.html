@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #myModal {
+        display: none;
+        position: fixed;
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(10,15,25,0.2);
+        }
+
+        .modal-content {
+        background-color: #7e48a8f5;
+        border: 2px solid red;
+        padding: 15px;
+        padding-bottom: 3rem;
+        border-radius: 15px;
+        margin: 15% auto;
+        width: 60%;
+        box-shadow: 10px 10px 10px 10px gray;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            margin-top: 5rem;
+            border-radius: 15px;
+            transition: width .5s;
+            width: 50%;
+        }
+        img:hover {
+            border: 3px solid skyblue;
+            padding: 5px;
+            transition: width .5s;
+            width: 35%;
+        }
+        .btn{
+            display: fixed;
+            border-radius: 10px;
+            float: right;
+            margin-left: 30px;
+            font-size: large;
+            box-shadow: 2px 2px 2px 2px gray;
+        }
+        .btn:hover{
+            margin-right: 10px;
+            border-radius: 35px;
+            background-color: gray !important;
+            transition: border-radius 2s, box-shadow 1s;
+            box-shadow: 5px 5px 5px 5px yellowgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <img id = "myBtn" src="https://github.com/CC-BHU/web-development/raw/main/assets/images/task8.jpg" alt="Red Dahlia image">
+    
+    <div id="myModal">
+    <div class="modal-content">
+      <h1 style="color:yellow">Red Dahlia Flower.</h1>
+      <p style="color:rgb(255, 101, 101)">
+        The spectrum of color offered by red-flowering Dahlias is extraordinary, spanning bold, fire-truck tones; bright orange-reds; romantic, wine-colored burgundy and maroon shades; and the captivating, nearly black hues of the darkest Dahlias. We confess to loving them all. Choose the shades you like best and combine them with Dahlias in other colors and forms to add bold highlights to the late summer and autumn garden and to create gorgeous, oh-so-easy bouquets.</p>
+      <button class="btn" style="background-color:yellow">Close</button>
+      <a href="https://github.com/CC-BHU/web-development/raw/main/assets/images/task8.jpg" download>
+        <button class="btn" style="background-color:skyblue">Download</button>
+      </a>
+    </div>
+  </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        function hide() {modal.style.display = "none";}
+        function show() {modal.style.display = "block";}
+        document.getElementById("myBtn").onclick = show;
+        document.getElementsByClassName("btn")[0].onclick = hide;
+        window.onclick = function(event) {if (event.target == modal) hide();}
+    </script>
+</body>
+</html>

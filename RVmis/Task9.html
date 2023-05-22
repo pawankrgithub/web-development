@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            border: 3px solid blue;
+            border-radius: 15px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+        table tr, th{
+            border: 3px solid orange;
+            border-collapse:collapse;
+            padding-bottom: 15px;
+            border-radius: 5px;
+        }
+        th{
+            columns: 1;
+            text-align: left;
+        }
+
+</style>
+</head>
+<body>
+<div>
+    <img id="profile" class="center" alt="Profile Pic">
+    <table class="center" style="top: 100%; bottom: 2rem; border-collapse: collapse;" >
+        <tr>
+            <th id="name" colspan=2 style="text-align: center;"></th>
+        </tr>
+        <tr>
+            <th id="bio" colspan=2 style="text-align: center;"></th>
+        </tr>
+        <tr>
+            <th class="item1"></th>
+            <th class="item2"></th>
+        </tr>
+        <tr>
+            <th class="item1"></th>
+            <th class="item2"></th>
+        </tr>
+        <tr>
+            <th class="item1"></th>
+            <th class="item2"></th>
+        </tr>
+        <tr>
+            <th class="item1"></th>
+            <th class="item2"></th>
+        </tr>
+        <tr>
+            <th class="item1"></th>
+            <th class="item2"></th>
+        </tr>
+        <tr>
+            <th class="item1"></th>
+            <th class="item2"></th>
+        </tr>
+    </table>
+</div>
+    <script>
+fetch("https://cc-bhu.github.io/web-development/assets/api/person.json").then(response => response.json()).then(data => {
+    var count = 0;
+for (key in data){
+    if (key === 'avatar'){
+        document.getElementById("profile").src = data[key];
+    }
+    else if (key == 'name'){
+        document.getElementById("name").innerHTML = data[key];
+    }
+    else if (key == 'bio'){
+        document.getElementById("bio").innerHTML = data[key];
+    }
+    else{
+    document.getElementsByClassName("item1")[count].innerHTML = key.toUpperCase();
+    document.getElementsByClassName("item2")[count].innerHTML = data[key];
+    count++;
+}
+}
+});
+</script>
+</body>
+</html>

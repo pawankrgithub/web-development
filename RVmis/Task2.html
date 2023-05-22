@@ -1,0 +1,43 @@
+<!-- Task
+A image is present in assets having path assets/images/task2.jpg and url https://github.com/CC-BHU/web-development/raw/main/assets/images/task2.jpg
+
+ Create a webpage task2.html with title Retro City.
+ Add a image provided with full width, i.e. 100%.
+ Create a text box on bottom right of the image.
+ Put some text inside box, for example: Welcome to the Retro city, feel like a game?
+ Add shadow to the text box 10px 10px with some color other than black. -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro City</title>
+    <style>
+        .container{
+            position: relative;
+        }
+        img{
+            width: 100%;
+        }
+        .textbox{
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 16%;
+            height: 18%;
+            background-color: #f2f2f2;
+            font-size: 14px;
+            box-shadow: 10px 10px 0px #333;
+        }
+    </style>
+ </head>
+ <body>
+    <div class="container">
+    <img src="https://github.com/CC-BHU/web-development/raw/main/assets/images/task2.jpg" alt="Retro Image" >
+    
+        <p class="textbox">Welcome to the Retro city, feel like a game?</p>
+    </div>
+</body>
+ </html>
