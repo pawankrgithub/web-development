@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>task6.html</title>
+</head>
+<body>
+    <h1>press the counter button  <button id="click">click me</button></h1>
+    <p id="counterValue">0</p>
+  <script>
+    var button = document.getElementById('click');
+    var counter = document.getElementById('counterValue');
+    var count = 0;
+    button.addEventListener('click', function()
+     {
+      count++;
+      counter.textContent = count;
+    }
+                          );
+  </script>
+</body>
+</html>
+
+
