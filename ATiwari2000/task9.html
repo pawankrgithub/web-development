@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 9</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: pink;
+      margin: 0;
+      padding: 20px;
+    }
+    .profile {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: wheat;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px black;
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit:contain;
+      margin-bottom: 10px;
+    }
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .bio {
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+    .detail {
+      margin-bottom: 10px;
+    }
+    .label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <img class="avatar" id="avatar" alt="Avatar">
+    <h1 class="name" id="name"></h1>
+    <p class="bio" id="bio"></p>
+    <div class="detail">
+      <span class="label">Age:</span>
+      <span id="age"></span>
+    </div>
+    <div class="detail">
+      <span class="label">Gender:</span>
+      <span id="gender"></span>
+    </div>
+    <div class="detail">
+      <span class="label">Email:</span>
+      <span id="email"></span>
+    </div>
+    <div class="detail">
+      <span class="label">Location:</span>
+      <span id="location"></span>
+    </div>
+    <div class="detail">
+      <span class="label">Occupation:</span>
+      <span id="occupation"></span>
+    </div>
+    <div class="detail">
+      <span class="label">Hobbies:</span>
+      <span id="hobbies"></span>
+    </div>
+  </div>
+
+  <script>
+    fetch('https://cc-bhu.github.io/web-development/assets/api/person.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("avatar").src = data.avatar;
+        document.getElementById("name").innerHTML = data.name;
+        document.getElementById("bio").innerHTML = data.bio;
+        document.getElementById("age").innerHTML = data.age;
+        document.getElementById("gender").innerHTML = data.gender;
+        document.getElementById("email").innerHTML = data.email;
+        document.getElementById("location").innerHTML = data.location;
+        document.getElementById("occupation").innerHTML = data.occupation;
+        document.getElementById("hobbies").innerHTML = data.hobbies;
+      });
+  </script>
+</body>
+</html>
