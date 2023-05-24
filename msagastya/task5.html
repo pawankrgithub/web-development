@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title>Task 5: Form</title>
+    <style>
+        .sp {
+            position: fixed;
+            left: 20vh;
+        }
+
+        .check {
+            text-align: justify;
+            margin-left: 20vh;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Form</h1>
+    <form style="text-align: left;">
+        <div>
+            Name: <input type="text" placeholder="Enter your name here" class="sp">
+            <br><br>
+
+            DOB:
+            <input type="date" placeholder="01/01/2000" class="sp">
+            <br><br>
+            Gender:
+            <div class="sp" style="display: inline;">
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+            </div>
+            <br><br>
+
+            Choose tech stack :
+            <div class="check">
+                <input type="checkbox" name="stack" value="ai">Artificial Intelligence <br>
+                <input type="checkbox" name="stack" value="cloud">Cloud <br>
+                <input type="checkbox" name="stack" value="web">Web <br>
+                <input type="checkbox" name="stack" value="mobile">Mobile <br>
+                <input type="checkbox" name="stack" value="devops">DevOps <br>
+                <input type="checkbox" name="stack" value="system">System <br>
+                <input type="checkbox" name="stack" value="ml">Machine Learning <br>
+                <input type="checkbox" name="stack" value="other">Other
+            </div>
+            <br><br>
+            Email: <input type="email" placeholder="abcd@xyz.com" class="sp">
+            <br><br>
+            Phone Number:
+            <input type="tel" placeholder="1234567890" class="sp">
+            <br><br>
+            <label for="security">
+                Security Question:
+            </label>
+            <select name="security" id="security" class="sp">
+                <option value="q1">What is your favorite book?</option>
+                <option value="q2">What is your nickname?</option>
+                <option value="q3">What is your birthtown</option>
+                <option value="other">Other</option>
+            </select>
+            <br><br>
+            Answer:
+            <input type="text" placeholder="Enter your answer here" class="sp">
+            <br><br>
+            Upload Your File:
+            <input type="file" class="sp">
+            <br><br>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+
+</html>
+

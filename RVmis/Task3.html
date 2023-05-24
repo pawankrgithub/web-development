@@ -1,0 +1,72 @@
+<!-- Write HTML to generate the following output. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table{
+            font-size: 32px ; 
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .center {
+            border: 3px solid blue;
+            border-radius: 15px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+        tr,td{
+            border: 3px solid;
+            column-width: 250px;
+            min-width: 75px;
+            height: 50px;
+            border-collapse: collapse;
+        }
+        
+      tr td:first-child{background-color: orange;}
+      tr td:last-child {background-color: green;}
+      tr:first-child td:nth-child(2),tr:first-child td:nth-child(3), tr:last-child td:nth-child(2), tr:last-child td:nth-child(3) {background-color: skyblue;}
+      tr:nth-child(2) td:nth-child(2){background-color: pink;}
+      tr:nth-child(3) td:nth-child(2),tr:nth-child(3) td:nth-child(3){background-color: yellow;}
+    </style>
+</head>
+<body>
+    <div>
+    <table class="center">
+        <tr>
+            <td>10</td>
+            <td>20</td>
+            <td>30</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>50</td>
+            <td colspan="2">Colour Table</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>70</td>
+            <td rowspan="2">80</td>
+            <td rowspan="2">90</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>110</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>130</td>
+            <td>140</td>
+            <td>150</td>
+            <td>16</td>
+        </tr>
+      </table>
+    </div>
+</body>
+</html>

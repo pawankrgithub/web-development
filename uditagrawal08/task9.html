@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+            font-size: 24px;
+            margin:auto;
+             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        img{
+            max-width: 240px;
+            border: 2px solid red;
+            border-radius: 20px;
+        }
+        #name{
+            font-size: xxx-large;
+            font-weight: 500;
+
+        }
+        tr td:first-child{
+            padding-right: 20%;
+
+        }
+        tr td:last-child{
+            text-align: left;
+            padding-left: 150px;
+        }
+    </style>
+</head>
+<body>
+    
+    <img src="https://github.com/CC-BHU/web-development/raw/main/assets/images/task9.jpg" alt="avatar" class="avatar"><br><br>
+    <span id="name"></span><br><br>
+    <span id="bio"></span><br><br>
+<table >
+    <tr>
+        <td id="ageTitle"></td>
+        <td id="age"></td>
+    </tr>
+    <tr>
+        <td id="genderTitle"></td>
+        <td  id="gender"></td>
+    </tr>
+    <tr>
+        <td id="emailTitle"></td>
+        <td id="email"></td>
+    </tr>
+    <tr>
+        <td id="locationTitle"></td>
+        <td id="location"></td>
+    </tr>
+    <tr>
+        <td id="occupationTitle"></td>
+        <td id="occupation"></td>
+    </tr>
+    <tr>
+        <td id="hobbiesTitle"></td>
+        <td id="hobbies"></td>
+    </tr>
+
+</table>
+    
+    
+    <script>
+        fetch('https://cc-bhu.github.io/web-development/assets/api/person.json')
+.then(response => response.json())
+.then(data => {
+    // Get element and change its innerHTML, use `data.name` or `data["name"]`.
+    var obj = data;
+for (var key in obj){
+    var value = obj[key];
+    if ((key == 'name') || (key == 'bio')) {
+        document.getElementById(key).innerHTML = value;}
+    else
+    {
+        document.getElementById(key+"Title").innerHTML = key.toUpperCase();
+        document.getElementById(key).innerHTML = value;
+    }
+}
+})
+</script>
+</body>
+</html>

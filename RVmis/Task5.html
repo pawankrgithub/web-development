@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=for, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+             padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form action="Submit" method="post">
+        Name : 
+        <input type="text" name="name"><br><br>
+        
+        Date of Birth : 
+        <input type="date" name="DOB"><br><br>
+       
+        Gender : <br>
+        <input type="radio" name="gender">Male <br>
+        <input type="radio" name="gender">Female <br>
+        <input type="radio" name="gender">Other <br><br>
+        
+        TechStack : <br>
+        <input type="checkbox" name="tech"> AI <br>
+        <input type="checkbox" name="tech"> ML <br>
+        <input type="checkbox" name="tech"> DevOps <br>
+        <input type="checkbox" name="tech"> Cloud <br>
+        <input type="checkbox" name="tech"> Web <br>
+        <input type="checkbox" name="tech"> Mobile <br>
+        <input type="checkbox" name="tech"> System <br><br>
+
+        Email : <br>
+        <input type="email" name="mail"><br><br>
+
+        Phone : <br>
+        <input type="number" name="phone"> <br><br>
+
+        Security Question : <br>
+        <select name="ques">
+            <option value="book">What is your favourite book?</option>
+            <option value="n_name">What is your nickname?</option>
+            <option value="town">What is your birth town?</option>
+            <option value="other">Other</option>
+        </select><br>
+        Answer : <br>
+        <input type="text" name="ans"><br><br>
+
+        Resume : <br>
+        <input type="file" name="resume"><br><br>
+    <input type="submit" value="Reset">
+        <input type="submit" value="Submit">
+
+
+    </form>
+</body>
+</html>
