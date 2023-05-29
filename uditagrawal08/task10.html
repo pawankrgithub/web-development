@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <form id="form_function">
+        <label for="function">Function</label>
+    <select name="function" id="function" required>
+        <option value="">--Select function--</option>
+        <option value="linear">Linear</option>
+        <option value="inverse">Inverse</option>
+        <option value="log">Log</option>
+    </select>
+    <br><br>
+    <label for="number">Number:</label>
+    <input type="number" id="number" required>
+    <br><br>
+    <input type="submit" value="Submit">
+    </form>
+    <h2>Result</h2>
+    <br>
+    <div id="result"></div>
+    
+    <pre id="json"></pre>
+    <script>
+        window.onload=function()
+        {var form = document.getElementById("form_function");
+        
+        form.addEventListener("submit", function(event)
+        {
+        event.preventDefault(); 
+    
+            var sel=document.getElementById("function").value;
+            var num=parseFloat(document.getElementById("number").value);
+            
+        if(sel==="inverse" && num==0)
+        {
+            alert("wrong input");
+            return;
+        }
+        if(sel==="log" && num<=0)
+        {
+            alert("wrong input");
+            return;
+        }
+        var res;
+        switch(sel)
+        {
+            case "linear":
+                res=num;
+                break;
+            case "inverse":
+                res=1/num;
+                break;
+            case "log":
+                res=Math.log10(num);
+                break;
+            default:
+                res="N/A";
+        }
+        document.getElementById("result").innerText = "Result: " + res;
+    var formdata={
+        "Selectedfunction":sel,
+        "InputNumber":num,
+        "Answer":res
+    };
+    document.getElementById("json").innerHTML=JSON.stringify(formdata,null,10);
+    
+    
+    });
+};
+    </script>
+</body>
+</html>
