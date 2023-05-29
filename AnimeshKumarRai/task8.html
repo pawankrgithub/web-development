@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 8</title>
+  <!-- <style>
+    .container {
+
+
+    }
+
+    .container img {
+      
+    }
+
+    .container img:hover {
+
+      
+    }
+
+    .model {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .model {
+      display: none;
+      padding: 100px;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+
+    }
+
+
+    .model-content {
+      text-align: left;
+      display: block;
+      width: 75%;
+      height: 30%;
+      border-radius: 20px;
+      background-color: aliceblue;
+      padding: 20px;
+      box-shadow: 0px 8px 8px 0px violet
+    }
+
+    #close {
+      background-color: darkgray;
+      float: right;
+      margin-left: 30px;
+      font-size: large;
+      border-radius: 10px;
+
+    }
+
+    #download {
+      background-color: darkgray;
+      float: right;
+      height: 50%;
+      font-size: large;
+      border-radius: 10px;
+    }
+
+    .model-content button:hover {
+      cursor: pointer;
+    }
+  </style> -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+    }
+
+    .container img {
+      border-radius: 20px;
+      height: 50vh;
+    }
+
+    .container img:hover {
+      border: 5px solid skyblue;
+      border-spacing: 15px;
+      cursor: pointer;
+
+    }
+
+    .model {
+
+      display: none;
+      position: fixed;
+      padding: 100px;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+
+    }
+
+    .model-content {
+      text-align: center;
+      display: block;
+      width: 70%;
+      height: 30%;
+      border-radius: 3px;
+      background-color: rgb(140, 198, 250);
+      padding: 20px;
+    }
+
+    #close {
+      background-color: rgb(255, 0, 0);
+      border-radius: 5px;
+      left: 20em;
+
+    }
+
+    #download {
+      background-color: rgb(0, 110, 37);
+      color: white;
+
+      border-radius: 5px;
+    }
+
+    .model-content button:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <img id="img" src="../assets/images/task8.jpg" alt="this is image">
+  </div>
+  <div id="mmodel" class="model">
+    <div class="model-content">
+      <h1>RED DAHLIA FLOWER</h1>
+      <br>
+      <p>The Red Dahlia flower is a stunning and vibrant flower known for its rich, deep red color.  </p>
+      <div>
+        <button class="close" onclick="closeFunction()" id="close">Close</button>
+        <button id="download" onclick="downloadImage()">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  var model = document.getElementById("mmodel");
+  var img = document.getElementById("img");
+  var close = document.getElementById("close");
+  function closeFunction() {
+    model.style.display = "none";
+  }
+  img.onclick = function () {
+    model.style.display = "block";
+  }
+  function downloadImage() {
+    const imageSrc = "https://github.com/CC-BHU/web-development/blob/main/assets/images/task8.jpg?raw=true";
+    window.location.href = imageSrc;
+  }
+
+</script>
+</body>
+
+</html>
