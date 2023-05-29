@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 9</title>
+    <style>
+        *{
+            margin: auto;
+            padding: 5px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        body{
+            height: 92vh;
+            background-image:linear-gradient(to bottom, rgba(255,0,0,0), rgb(255, 174, 0)) ;
+        }
+        img {
+            border-radius: 30px;
+            margin: 20px;
+            max-width: 300px;   
+        }
+
+        #name {
+            font-size: larger;
+            font-weight: 500;
+        }
+
+        tr td:first-child {
+            padding-right: 20%;
+            font-weight: bold;
+        }
+
+        tr td:last-child {
+            text-align: left;
+            padding-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <img src="https://github.com/CC-BHU/web-development/raw/main/assets/images/task9.jpg" alt="avatar"
+        class="img"><br>
+    <span id="name"></span>
+    <br><br>
+    <span id="bio"></span>
+    <br><br>
+    <table>
+        <tr>
+            <td id="ageT"></td>
+            <td id="age"></td>
+        </tr>
+        <tr>
+            <td id="genderT"></td>
+            <td id="gender"></td>
+        </tr>
+        <tr>
+            <td id="emailT"></td>
+            <td id="email"></td>
+        </tr>
+        <tr>
+            <td id="locationT"></td>
+            <td id="location"></td>
+        </tr>
+        <tr>
+            <td id="occupationT"></td>
+            <td id="occupation"></td>
+        </tr>
+        <tr>
+            <td id="hobbiesT"></td>
+            <td id="hobbies"></td>
+        </tr>
+
+    </table>
+
+
+
+    <script>
+        fetch('https://cc-bhu.github.io/web-development/assets/api/person.json')
+            .then(response => response.json())
+            .then(data => {
+                var obj = data;
+                for (var key in obj) {
+                    var value = obj[key];
+                    if ((key == 'name') || (key == 'bio')) {
+                        document.getElementById(key).innerHTML = value;
+                    }
+                    else {
+                        document.getElementById(key + "T").innerHTML = key.toUpperCase();
+                        document.getElementById(key).innerHTML = ": " + value;
+                    }
+                }
+            })
+    </script>
+</body>
+
+</html>
