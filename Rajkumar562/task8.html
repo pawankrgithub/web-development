@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+    <style>
+        #flower{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #flower img {
+            width: 50%;
+            transition: border 0.4s;
+        }
+
+        #flower img:hover {
+            border: 5px solid cyan;
+        }
+        
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            border-radius: 10px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            box-shadow: 0px 0px 10px black;
+        }
+
+        .modal-footer{
+            text-align: right;
+        }
+
+        #close,#download{
+            border-radius: 5px;
+            padding: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #download{
+            background-color: deepskyblue;
+        }
+        #close{
+            background-color: lightgrey;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="flower">
+        <img src="https://github.com/CC-BHU/web-development/blob/main/assets/images/task8.jpg?raw=true" alt="Red Dahlia" onclick="flower()">
+     </div>
+     <div id="myModal" class="modal">
+     <div class="modal-content">
+        <div class="modal-header">
+          <h2>Red Dahlia Flower</h2>
+        </div>
+        <div class="modal-body">
+          <p>This flower symbolizes perseverance and the ability to overcome.</p>
+        </div>
+        <div class="modal-footer">
+          <button id="close">Close</button>
+          <button id="download">Download</button>
+        </div>
+      </div>
+    </div>
+      <script>
+         var modal = document.getElementById("myModal");
+         var close = document.getElementById("close");
+         var down = document.getElementById("download");
+         function flower(){
+            modal.style.display = "flex";
+         }
+         close.onclick = function(){
+            modal.style.display = "none";
+         }
+         down.onclick = function(){
+            window.loaction.href= "https://github.com/CC-BHU/web-development/blob/main/assets/images/task8.jpg?raw=true";
+         }
+      </script>
+</body>
+</html>
