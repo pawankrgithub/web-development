@@ -7,21 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 9</title>
     <style>
-        *{
+        * {
             margin: auto;
             padding: 5px;
             text-align: center;
             font-size: 24px;
         }
 
-        body{
+        body {
             height: 92vh;
-            background-image:linear-gradient(to bottom, rgba(255,0,0,0), rgb(255, 174, 0)) ;
+            background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgb(255, 174, 0));
         }
+
         img {
             border-radius: 30px;
             margin: 20px;
-            max-width: 300px;   
+            max-width: 300px;
         }
 
         #name {
@@ -44,8 +45,7 @@
 <body>
 
 
-    <img src="https://github.com/CC-BHU/web-development/raw/main/assets/images/task9.jpg" alt="avatar"
-        class="img"><br>
+    <img id="avatar" alt="avatar" id="img"><br>
     <span id="name"></span>
     <br><br>
     <span id="bio"></span>
@@ -81,13 +81,18 @@
 
 
     <script>
+
         fetch('https://cc-bhu.github.io/web-development/assets/api/person.json')
             .then(response => response.json())
             .then(data => {
+                
                 var obj = data;
                 for (var key in obj) {
                     var value = obj[key];
-                    if ((key == 'name') || (key == 'bio')) {
+                    if (key === 'avatar'){
+                        document.getElementById("avatar").src = data[key];
+                    }
+                    else if ((key == 'name') || (key == 'bio')) {
                         document.getElementById(key).innerHTML = value;
                     }
                     else {
