@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+    <style>
+        .dropbtn{
+            background-color: rgb(218, 98, 255);
+            padding: 10px;
+            border-radius: 10px;
+            border: red;
+            font-size: large;
+            min-width: 10px;
+
+            
+        }
+        .dropbtn:hover{
+            background-color: rgb(37, 1, 1);
+            color: rgb(249, 249, 249);
+           
+            
+        }
+        nav{
+            background-color: rgb(218, 98, 255);
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+        }
+        .dropdown{
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown-content ,.dropdownc-content{
+            display: none;
+            position: absolute;
+            text-align: center;
+            font-size: large;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: rgb(255, 221, 98);
+            box-shadow: 6px 0px 6px black;
+        }
+        .dropdown-content a ,.dropdownc-content a{
+            display: block;
+        }
+        .dropdown-content a:hover ,.dropdownc-content a:hover{
+            display: block;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-size: large;
+           
+        }
+        .dropdown:hover .dropdown-content{ 
+            display: block;
+        
+            
+        }
+      .dropdownclick .active{
+        display: block;
+      }
+        
+
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="dropdown">
+            <button class="dropbtn">Hover</button>
+            <div class="dropdown-content">
+                <a href="https://github.com/pawankrgithub">Profile</a>
+                <a href="https://github.com/CC-BHU">Coading Club</a>
+                <a href="https://github.com/CC-BHU/web-development">Repository </a>
+          
+            </div> 
+
+        </div>
+        <div class="dropdownclick">
+            <button  class="dropbtn" onclick="toggleDropdown(event) ">Click</button>
+            <div id="btn" class="dropdownc-content">
+                <a href="https://github.com/pawankrgithub">Profile</a>
+                <a href="https://github.com/CC-BHU">Coading Club</a>
+                <a href="https://github.com/CC-BHU/web-development">Repository </a>
+          
+            </div> 
+
+        </div>
+    </nav>
+    <script>
+      function toggleDropdown(event) {
+    var dropdown = document.getElementById("btn");
+    dropdown.classList.toggle("active");
+  }
+  window.onclick = function(event) {
+    var dropdown = document.getElementById("click-dropdown");
+    if (!event.target.matches('.dropdownclick') && dropdown.classList.contains('active')) {
+      dropdown.classList.remove('active');
+    }
+  };
+        
+    </script>
+</body>
+</html>
