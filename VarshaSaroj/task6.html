@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>task6.html</title>
+    <title>task6</title>
 </head>
 <body>
-    <h1>press the counter button  <button id="click">click me</button></h1>
-    <p id="counterValue">0</p>
+  <div style="height: fit-content; color: rgb(92, 108, 156); text-align: center;">
+    <h1>Press the counter button  </h1>
+    <button id="click" style="color: darkviolet;">click me</button>
+    <p id="counterValue" style="color: rgb(19, 95, 95);" >0</p>
+  </div>
   <script>
     var button = document.getElementById('click');
     var counter = document.getElementById('counterValue');
     var count = 0;
     button.addEventListener('click', function()
      {
+      
       count++;
+
       counter.textContent = count;
     }
                           );
