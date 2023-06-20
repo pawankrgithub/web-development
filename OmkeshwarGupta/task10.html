@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation and JSON</title>
+<body>
+    <form >
+        <div>
+            <label for="fun">Function :</label>
+            <select name="" id="fun">
+                <option value="linear">Linear</option>
+                <option value="inverse">Inverse</option>
+                <option value="log">Log</option>
+            </select>
+
+        </div>
+        <br>
+        <div>
+            <label for="input">Enter the Number :</label>
+            <input type="number" id="input">
+
+            
+            <button type="submit" onclick="result(); return false;" >Submit</button>
+        </div>
+        <br>
+        <div id="res" style="display: none;">
+            Result : <input type="text" name="" id="r" >
+        </div>
+        <br>
+        <div>
+            <pre id="json">
+
+            </pre>
+        </div>
+       
+    </form>
+    
+</body>
+<script>
+    function result() {
+        var select=document.getElementById("fun");
+        var selectedFunction = select.value;
+        var input = document.getElementById("input");
+        var number = parseFloat(input.value);
+
+      if (selectedFunction === "inverse" && number === 0) 
+      {
+        alert("Wrong input: Cannot divide by zero.");
+        return;
+      }
+
+      if (selectedFunction === "log" && (number <= 0 || isNaN(number))) {
+        alert("Wrong input: Input must be a positive number.");
+        return;
+      }
+
+      var result;
+      if (selectedFunction === "linear") {
+        result = number;
+      } 
+      else if (selectedFunction === "inverse") {
+        result = 1 / number;
+      } 
+      else if (selectedFunction === "log") {
+        result = Math.log(number);
+      }
+
+      document.getElementById("res").style.display="block" ;
+      document.getElementById("r").value=result;
+
+
+      var formData = {
+        function: selectedFunction,
+        number: number,
+        result: result
+      };
+
+      var jsonData = JSON.stringify(formData, null, 2);
+      document.getElementById("json").innerText = jsonData;
+
+        
+    }
+</script>
+</html>
