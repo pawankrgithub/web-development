@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task8</title>
+</head>
+<style>
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 15%;
+    border-radius: 15px;
+  }
+
+  img:hover {
+    border: 3px rgb(239, 60, 60);
+    border-style: ridge;
+  }
+
+  .mod-con {
+    display: block;
+    background-color:white;
+    width: 800px;
+    box-shadow:0 6 10 ;
+    border-radius: 10px;
+    border: solid black 0.05px;
+    box-shadow: 10px 5px 5px rgb(45, 31, 31);
+    padding: 10px;  
+  }
+  .mod{
+    display: none;
+    position: absolute;
+    top: 50%;
+     left: 20%;
+    
+  }
+  
+  #close{
+    color: white;
+    background-color: rgb(36, 35, 35);
+    border-radius: 3px;
+    margin-left: 80%;
+    
+  }
+  #down{
+    color: white;
+    background-color: rgb(3, 92, 127);
+    border-radius: 3px;
+    margin-left: 80%;
+
+  }
+</style>
+
+<body>
+  <div id="img">
+    <img src="https://raw.githubusercontent.com/CC-BHU/web-development/main/assets/images/task8.jpg"
+      alt="Image Not found" onclick="popupfun()">
+
+  </div>
+  <div id="modal" class="mod">
+
+    <div class="mod-con">
+      <h2><i>Red Dahlia Flower</i></h2>
+      <p>This is a rare flower.</p>
+      <button id="close" onclick="closeFunction()">Close</button>
+    <button id="down" onclick="downloadImage()">Download</button>
+
+    </div>
+    
+  </div>
+
+
+</body>
+<script>
+  var model = document.getElementById("modal");
+  var img = document.getElementById("img");
+  var close = document.getElementById("close");
+  function closeFunction() {
+    model.style.display = "none";
+  }
+  img.onclick = function () {
+    model.style.display = "block";
+  }
+  function downloadImage() {
+        const imageSrc = "https://github.com/CC-BHU/web-development/blob/main/assets/images/task8.jpg?raw=true";
+        window.location.href = imageSrc;
+  }
+</script>
+
+</html>
