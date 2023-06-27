@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<style>
+  .nick{
+    text-align: center;
+
+  }
+  img{border-radius: 20px;
+      height: 300px;
+      margin-top: 60px;
+      
+
+  }
+  .bio{
+    font-size: large;
+  }
+  table{
+
+    font-size: large;
+    line-height: 30px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  td{
+    width: 160px;
+  }
+</style>
+<body>
+   <div class="nick">
+    <img id="avatar" alt="avatar not found">
+    
+    <h2 id="name"></h2>
+    <p id="bio"></p>
+   <div >
+  
+    <table>
+      <tr>
+        <td>Age</td>
+        <td><span id="age"></span></td>
+      </tr>
+      <tr>
+        <td> Gender</td>
+        <td><span id="gender"></span></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><span id="email"></span></td>
+      </tr>
+      <tr>
+        <td>Loaction</td>
+        <td> <span id="location"></span></td>
+      </tr>
+      <tr>
+        <td>Occupation</td>
+        <td><span id="occupation"></span></td>
+      </tr>
+      <tr>
+        <td>Hobbies</td>
+        <td><span id="hobbies"></span></td>
+      </tr>
+    </table>
+   </div>
+   
+   </div>
+
+</body>
+<script >
+     fetch('https://cc-bhu.github.io/web-development/assets/api/person.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("avatar").src = data.avatar;
+        document.getElementById("name").innerHTML = data.name;
+        document.getElementById("bio").innerHTML = data.bio;
+        document.getElementById("age").innerHTML = data.age;
+        document.getElementById("gender").innerHTML = data.gender;
+        document.getElementById("email").innerHTML = data.email;
+        document.getElementById("location").innerHTML = data.location;
+        document.getElementById("occupation").innerHTML = data.occupation;
+        document.getElementById("hobbies").innerHTML = data.hobbies;
+      });
+</script>
+</html>
+
