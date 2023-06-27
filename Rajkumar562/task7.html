@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+    <style>
+
+        .navbar {
+        overflow: hidden;
+        background-color: rgb(53, 157, 226);
+        border-radius: 10px;
+        display: flex;
+        }
+
+        .hover {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropbtn {
+        background-color: rgb(53, 157, 226);
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        }
+
+        .dropbtn:hover{
+            background-color: rgb(245, 46, 185);
+            color: white;
+            border-radius: 10px;
+        }
+
+        .hoverList , .clickList{
+        display: none;
+        position: absolute;
+        background-color: rgb(240, 192, 37);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .hoverList a ,.clickList a{
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+        
+        .hover:hover .hoverList {display: block;}
+        .hoverList a:hover ,.clickList a:hover{background-color: rgb(171, 245, 35);}
+
+        .click .show{
+        display: block;
+      }
+    </style>
+</head>
+<body>
+    <nav class = "navbar">
+        <div class="hover">
+            <button class="dropbtn">Hover</button>
+            <div class="hoverList">
+              <a href="https://github.com/Rajkumar562">Profile</a>
+              <a href="https://github.com/CC-BHU">Coding Club</a>
+              <a href="https://github.com/Rajkumar562/Web-Development">Repository</a>
+            </div>
+          </div> 
+          <div class="click">
+          <button onclick="func()" class = "dropbtn"> Click </button>
+          <div id="cl" class="clickList">
+            <a href="https://github.com/rajkumar562">Profile</a>
+            <a href="https://github.com/CC-BHU">Coding Club</a>
+            <a href="https://github.com/Rajkumar562/Web-Development">Repository</a>
+          </div>
+        </div>
+    </nav>
+    <script>
+        function func() {
+        document.getElementById("cl").classList.toggle("show");
+        }
+
+        window.onclick = function(event)
+        {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("clickList");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

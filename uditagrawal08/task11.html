@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <style>
+        body{
+            background-color:cornsilk;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #board {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+
+        grid-gap: 10px;
+        width: 330px;
+        height: 330px;
+      }
+        .cell{
+            width: 100px;
+            height: 100px;
+            border:2px solid blueviolet;
+            justify-content: center;  
+            align-items: center;
+            display: flex;
+
+        
+        }
+        #board .cell:hover{
+            background-color: aqua;
+             box-shadow: 0px 0px 5px black ;
+            cursor:pointer;
+            }
+        h1{     
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            color: blue;    
+        }
+        #reset{
+            text-align: center;
+            padding-top: 50px;
+
+        }
+        .left-0{
+            padding-right: 150px;
+            padding-bottom: 100px;
+        }
+        .right-0{
+            padding-left: 50px;
+            padding-bottom: 90px;
+        }
+        .right-0 img{
+            width: 150px;
+            height: 200px;
+            display: none;
+            box-shadow: 0px 0px 5px bisque;
+            position:fixed;
+            border-radius: 10px;
+            
+        }
+        .left-0 img{
+            width: 120px;
+            height: 200px;
+            display: none;
+            box-shadow: 0px 0px 5px bisque;
+            position:fixed;
+        border-radius: 10px;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>TIC TAC TOE</h1>
+    
+        <div class="box">
+        <div class="left-0"><img id="img-left" src="naruto1.gif" alt="animated  gif"></div>
+        <div id="board">
+            <div class="cell" id="b1"></div>
+            <div class="cell" id="b2"></div>
+            <div class="cell" id="b3"></div>
+            <div class="cell" id="b4"></div>
+            <div class="cell" id="b5"></div>
+            <div class="cell" id="b6"></div>
+            <div class="cell" id="b7"></div>
+            <div class="cell" id="b8"></div>
+            <div class="cell" id="b9"></div>
+        </div>
+        <div class="right-0"><img id="img-right" src="naruto2.gif" alt="animated  gif"></div>
+    
+</div>
+    
+<div id="reset">
+    <button onclick="resetGame()">Restart</button>
+</div>
+<script>
+var currentPlayer="X";
+var moves=0;
+var cells=Array.from(document.getElementsByClassName("cell"));
+var board=['','','','','','','','',''];
+cells.forEach(function(cell){
+    cell.addEventListener('click',function()
+    {
+        makeMove(cells.indexOf(cell));
+        
+    });
+});
+function makeMove(cellIndex) {
+    var img1=document.getElementById("img-right");
+    var img2=document.getElementById("img-left");
+
+
+  if (board[cellIndex] === '') {
+    board[cellIndex] = currentPlayer;
+    cells[cellIndex].innerText = currentPlayer;
+
+    moves++;
+    if (checkWin(currentPlayer)) {
+      alert(currentPlayer + ' wins!');
+    img1.style.display="none";
+    img2.style.display="none";
+  
+      resetGame();
+      return;
+    } else if (moves === 9) {
+      alert("It's a draw!");
+      resetGame();
+      return;
+    }
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+  }
+  
+  if(currentPlayer=="X")
+  {
+    img1.style.display="block";
+    img2.style.display="none";
+  }
+  else{
+    img1.style.display="none";
+    img2.style.display="block";
+    }
+}
+
+function checkWin(player)
+{
+    var winCombos=[
+         [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+    ];
+    return winCombos.some(combination=>{
+        return combination.every(index=>board[index]===player);
+    });}
+    function resetGame()
+    {
+        var img1=document.getElementById("img-right");
+        var img2=document.getElementById("img-left");
+
+        board=['','','','','','','','',''];
+        moves=0;
+        currentPlayer='X';
+        cells.forEach(cell=>{
+            cell.innerText='';
+
+        img1.style.display="none";
+        img2.style.display="none";
+  
+
+        });
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC TAC TOE</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+    body{
+        background-color: rgb(25, 36, 102);
+    }
+    .head{
+        font-size: larger;
+        font-family: 'Pacifico', cursive;
+        text-align: center;
+        background-color: #DDA0DD;
+        color: black;
+        border: solid rgb(0, 0, 0) 5px;
+        border-radius: 15px;
+        
+    }
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .board{ 
+        margin-top: 40px ;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 10px;
+        width: 330px;
+        height: 330px;
+        
+
+    }
+    .cell{
+        font-family: 'Pacifico', cursive;
+        font-size: 50px;
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        background-color: #DDA0DD; 
+        background-color: rgb(127, 201, 67);
+        box-shadow: 2px 3px 5px red;
+        
+    }
+    .cell:hover {
+        background-color: #DDA0DD;
+    }
+</style>
+<body>
+    <fieldset class="head">
+        <h2>TIC TAC TOE</h2>
+    </fieldset>
+<div class="box">
+
+    <div class="board">
+        <div class="cell" id="cell-1"></div>
+        <div class="cell" id="cell-2"></div>
+        <div class="cell"id="cell-3"></div>
+        <div class="cell"id="cell-4"></div>
+        <div class="cell"id="cell-5"></div>
+        <div class="cell"id="cell-6"></div>
+        <div class="cell"id="cell-7"></div>
+        <div class="cell"id="cell-8"></div>
+        <div class="cell"id="cell-9"></div>
+    </div>
+
+</div>
+
+</body>
+<script>
+     var currentPlayer = 'X';
+      var moves = 0;
+      var cells = Array.from(document.getElementsByClassName('cell'));
+      var board = ['', '', '', '', '', '', '', '', ''];
+      cells.forEach(function(cell, index) {
+        cell.addEventListener('click', function() {
+          makemove(index);
+        });
+      });
+
+      function makemove(cellIndex) {
+        if (board[cellIndex] === '') {
+          board[cellIndex] = currentPlayer;
+          cells[cellIndex].innerText = currentPlayer;
+          moves++;
+          if (checkWin(currentPlayer)) 
+          {
+            alert(currentPlayer + ' wins!');
+            resetGame();
+            return;
+          } 
+          else if (moves === 9) 
+          {
+            alert("It's a draw!");
+            resetGame();
+            return;
+          }
+
+          currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        }
+      }
+
+      function checkWin(player) {
+        var winCombos= [
+          [0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8],
+          [0, 3, 6],
+          [1, 4, 7],
+          [2, 5, 8],
+          [0, 4, 8],
+          [2, 4, 6]
+        ];
+        return winCombos.some(combination => 
+        {
+          return combination.every(index => board[index] === player);
+        });
+      }
+
+      function resetGame() 
+      {
+        board = ['', '', '', '', '', '', '', '', ''];
+        moves = 0;
+        currentPlayer = 'X';
+        cells.forEach(cell => {
+          cell.innerText = '';
+        });
+      }
+</script>
+</html>
+
+
+
