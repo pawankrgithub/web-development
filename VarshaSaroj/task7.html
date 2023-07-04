@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .menu {
+        background-color: rgb(174, 231, 136);
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+      }
+      .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+      }
+      .menu li {
+        margin-right: 10px;
+      }
+       .menu a {
+        text-decoration: none;
+        color: black;
+        padding: 8px 12px;
+        border-radius: 5px;
+      }
+      .dropdownhover {
+        position:relative;
+        display: inline-block;
+        border-radius: 5px;
+        padding:5px;
+        display: flex;
+      }
+      .dropdownhover:hover{
+        background-color:rgb(60, 122, 41);
+      }
+      .dropdownclick:hover{
+        background-color: rgb(60,122,41);
+        border-radius: 5px;
+        padding:5px;
+        display: flex;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 35px;
+        background-color: rgb(134, 241, 134);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 5px 5px rgb(120, 192, 117);
+      }
+      .dropdownhover:hover .dropdown-content {
+        display: block;
+        background-color: rgb(134, 241, 134);
+      }
+      .dropdownhover.active .dropdownc-content {
+        display: block;
+        background-color: rgb(120, 192, 117);
+      }
+      .dropdown-content a {
+        display: block;
+        padding: 5px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .dropdown-content a:hover {
+        background-color: rgb(76, 146, 73);
+      }
+      .dropdownclick {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdownclick.active .dropdownc-content {
+        display: block;
+        background-color: rgb(134, 241, 134);
+      }
+      .dropdownc-content {
+        display: none;
+        position: absolute;
+        top: 35px;
+        background-color: rgb(134, 241, 134);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 5px 5px rgb(120, 192, 117);
+      }
+      .dropdownc-content a {
+        display: block;
+        padding: 5px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .dropdownc-content a:hover {
+        background-color: rgb(76, 146, 73);
+      }
+
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li class="dropdownhover">
+          <a href="#">Hover</a>&nbsp;&nbsp;
+          <div class="dropdown-content">
+            <a href="https://github.com/VarshaSaroj"> Profile</a>
+            <a href="#"> Coding Club</a>
+            <a href= "https://github.com/VarshaSaroj/Computer_Networks">Repository</a>
+        </div> 
+    </li>
+    <li class="dropdownclick">
+        <a href="#">Click</a> 
+        <div class="dropdownc-content">
+            <a href="https://github.com/VarshaSaroj"> Profile</a>
+            <a href="#"> Coding Club</a>
+            <a href= "https://github.com/VarshaSaroj/Computer_Networks">Repository</a>
+        </div> 
+    </li>
+    </ul>
+      </nav>
+      <script>
+        const dropdownhover = document.querySelector('.dropdownclick');
+        const dropdownContent = document.querySelector('.dropdownc-content');
+        dropdownhover.addEventListener('click', function(event) {
+          this.classList.toggle('active');
+          event.stopPropagation();
+        }
+                                 );
+        document.addEventListener('click', function() {
+          dropdownhover.classList.remove('active');
+        }
+                                 );
+        dropdownContent.addEventListener('click', function(event) {
+          event.stopPropagation();
+        }
+                                        );
+      </script>        
+    
+</body>
+</html>

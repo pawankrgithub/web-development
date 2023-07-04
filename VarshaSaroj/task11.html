@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+  <style>
+    h1{
+      font-family: Times New Roman;
+        margin-top: 70px;
+        text-align: center;
+    }
+    table {
+       margin-left: 80vh;
+        border-collapse: collapse;
+        border: 2px solid #333;
+      
+    }
+
+    td {
+       
+      width: 80px;
+      height: 80px;
+      border: 2px solid #333;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 30px;
+    
+    }
+
+    td:hover {
+      background-color: #cec8c8;
+    }
+
+    button {
+      display: block;
+    padding: 5px 15px 5px 15px;
+      margin: 20px auto;
+    }
+    button:hover{
+     background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tic-Tac-Toe</h1>
+  <table>
+    <tr>
+      <td onclick="makeMove(0, 0)" id="cell-0-0"></td>
+      <td onclick="makeMove(0, 1)" id="cell-0-1"></td>
+      <td onclick="makeMove(0, 2)" id="cell-0-2"></td>
+    </tr>
+    <tr>
+      <td onclick="makeMove(1, 0)" id="cell-1-0"></td>
+      <td onclick="makeMove(1, 1)" id="cell-1-1"></td>
+      <td onclick="makeMove(1, 2)" id="cell-1-2"></td>
+    </tr>
+    <tr>
+      <td onclick="makeMove(2, 0)" id="cell-2-0"></td>
+      <td onclick="makeMove(2, 1)" id="cell-2-1"></td>
+      <td onclick="makeMove(2, 2)" id="cell-2-2"></td>
+    </tr>
+  </table>
+  <button onclick="resetGame()">Reset</button>
+
+  <script>
+    var name=prompt("enter your name:");
+    alert(`${name} you have assign X as a game sign`);
+    let currentPlayer = 'X';
+    let gameEnded = false;
+
+    function makeMove(row, col) {
+      const cell = document.getElementById(`cell-${row}-${col}`);
+      if (cell.innerHTML === '' && !gameEnded) {
+        cell.innerHTML = currentPlayer;
+        cell.style.cursor = 'default';
+        evaluateResults();
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      }
+    }
+    function evaluateResults() {
+      const winningCombinations = [
+        [[0, 0], [0, 1], [0, 2]],
+        [[1, 0], [1, 1], [1, 2]], 
+        [[2, 0], [2, 1], [2, 2]], 
+        [[0, 0], [1, 0], [2, 0]], 
+        [[0, 1], [1, 1], [2, 1]], 
+        [[0, 2], [1, 2], [2, 2]], 
+        [[0, 0], [1, 1], [2, 2]], 
+        [[0, 2], [1, 1], [2, 0]]  
+      ];
+
+      for (const combination of winningCombinations) {
+        const [a, b, c] = combination;
+        const cellA = document.getElementById(`cell-${a[0]}-${a[1]}`).innerHTML;
+        const cellB = document.getElementById(`cell-${b[0]}-${b[1]}`).innerHTML;
+        const cellC = document.getElementById(`cell-${c[0]}-${c[1]}`).innerHTML;
+
+        if (cellA !== '' && cellA === cellB && cellB === cellC) {
+          highlightWinningCells(a, b, c);
+          gameEnded = true;
+          setTimeout(() => {
+            alert(`Player ${cellA} wins!`);
+          }, 100);
+          return;
+        }
+      }
+
+      const cells = document.getElementsByTagName('td');
+      let isTie = true;
+
+      for (const cell of cells) {
+        if (cell.innerHTML === '') {
+          isTie = false;
+          break;
+        }
+      }
+
+      if (isTie) {
+        gameEnded = true;
+        setTimeout(() => {
+          alert("It's a tie!");
+        }, 100);
+      }
+    }
+    function highlightWinningCells(a, b, c) {
+      const cellA = document.getElementById(`cell-${a[0]}-${a[1]}`);
+      const cellB = document.getElementById(`cell-${b[0]}-${b[1]}`);
+      const cellC = document.getElementById(`cell-${c[0]}-${c[1]}`);
+
+      cellA.style.backgroundColor = 'green';
+      cellB.style.backgroundColor = 'lightgreen';
+      cellC.style.backgroundColor = 'seagreen';
+    }
+
+    function resetGame() {
+      const cells = document.getElementsByTagName('td');
+      for (const cell of cells) {
+        cell.innerHTML = '';
+        cell.style.backgroundColor = 'white';
+        cell.style.cursor = 'pointer';
+      }
+
+      currentPlayer = 'X';
+      gameEnded = false;
+    }
+  </script>
+</body>
+</html>

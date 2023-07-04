@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Task 11</title>
+    <style>
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h2 {
+        text-align: center;
+        box-shadow: 0px 0px 3px black;
+      }
+
+      #gameboard .cell:hover {
+        background-color: aquamarine;
+        box-shadow: 0px 0px 3px black;
+      }
+
+      #gameboard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        width: 330px;
+        height: 330px;
+      }
+
+      .cell {
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 45px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Tic Tac Toe</h2>
+    <div class="box">
+      <div id="gameboard">
+        <div class="cell" id="cell-0"></div>
+        <div class="cell" id="cell-1"></div>
+        <div class="cell" id="cell-2"></div>
+        <div class="cell" id="cell-3"></div>
+        <div class="cell" id="cell-4"></div>
+        <div class="cell" id="cell-5"></div>
+        <div class="cell" id="cell-6"></div>
+        <div class="cell" id="cell-7"></div>
+        <div class="cell" id="cell-8"></div>
+      </div>
+    </div>
+    <script>
+      var currentPlayer = 'X';
+      var moves = 0;
+      var cells = Array.from(document.getElementsByClassName('cell'));
+      var board = ['', '', '', '', '', '', '', '', ''];
+      cells.forEach(function(cell, index) {
+        cell.addEventListener('click', function() {
+          makemove(index);
+        });
+      });
+
+      function makemove(cellIndex) {
+        if (board[cellIndex] === '') {
+          board[cellIndex] = currentPlayer;
+          cells[cellIndex].innerText = currentPlayer;
+          moves++;
+          if (checkWin(currentPlayer)) 
+          {
+            alert(currentPlayer + ' wins!');
+            resetGame();
+            return;
+          } 
+          else if (moves === 9) 
+          {
+            alert("It's a draw!");
+            resetGame();
+            return;
+          }
+
+          currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        }
+      }
+
+      function checkWin(player) {
+        var winCombos= [
+          [0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8],
+          [0, 3, 6],
+          [1, 4, 7],
+          [2, 5, 8],
+          [0, 4, 8],
+          [2, 4, 6]
+        ];
+        return winCombos.some(combination => 
+        {
+          return combination.every(index => board[index] === player);
+        });
+      }
+
+      function resetGame() 
+      {
+        board = ['', '', '', '', '', '', '', '', ''];
+        moves = 0;
+        currentPlayer = 'X';
+        cells.forEach(cell => {
+          cell.innerText = '';
+        });
+      }
+    </script>
+  </body>
+</html>
