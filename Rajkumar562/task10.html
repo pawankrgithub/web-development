@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Function Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        
+        select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+        
+        .result {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #cccccc;
+            padding: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Function Calculator</h1>
+        <form id="functionForm">
+            <label for="functionSelect">Select a function:</label>
+            <select id="functionSelect" required>
+                <option value="">-----Select-----</option>
+                <option value="linear">Linear (x)</option>
+                <option value="inverse">Inverse (1/x)</option>
+                <option value="log">Log (log(x))</option>
+            </select>
+            <label for="numberInput">Enter a number:</label>
+            <input type="number" id="numberInput" required>
+            <button type="submit">Submit</button>
+        </form>
+        
+        <div class="result" id="resultContainer"></div>
+    </div>
+
+    <script>
+        document.getElementById("functionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            var functionSelect = document.getElementById("functionSelect");
+            var selectedFunction = functionSelect.value;
+            
+            var numberInput = document.getElementById("numberInput");
+            var number = parseFloat(numberInput.value);
+            
+            if (selectedFunction === "inverse" && number === 0) {
+                alert("Wrong input: Cannot divide by zero");
+                return;
+            }
+            
+            if (selectedFunction === "log" && (number <= 0 || isNaN(number))) {
+                alert("Wrong input: Input must be a positive number");
+                return;
+            }
+            
+            var result;
+            
+            switch (selectedFunction) {
+                case "linear":
+                    result = number;
+                    break;
+                case "inverse":
+                    result = 1 / number;
+                    break;
+                case "log":
+                    result = Math.log(number);
+                    break;
+                default:
+                    result = "Unknown function";
+                    break;
+            }
+            
+            var resultContainer = document.getElementById("resultContainer");
+            resultContainer.textContent = "Result: " + result;
+            
+            var formData = {
+                selectedFunction: selectedFunction,
+                number: number,
+                result: result
+            };
+            
+            var json = JSON.stringify(formData, null, 2);
+            resultContainer.textContent += "\n\n" + json;
+        });
+    </script>
+</body>
+</html>
